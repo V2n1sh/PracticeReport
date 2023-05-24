@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище Витязь_БДModelContainer" CdmEntityContainer="Витязь_БДEntities">
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище Витязь_БДModel.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище Витязь_БДModel.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище Витязь_БДModel.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище Витязь_БДModel.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Витязь_БДModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище Витязь_БДModel.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Витязь_БДModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище Витязь_БДModel.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище Витязь_БДModel.sp_upgraddiagrams" />
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Витязь_БДModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="виды_спорта">
+      <EntityTypeMapping TypeName="Витязь_БДModel.виды_спорта">
+        <MappingFragment StoreEntitySet="виды_спорта">
+          <ScalarProperty Name="наименование" ColumnName="наименование" />
+          <ScalarProperty Name="код_типа_спорта" ColumnName="код_типа_спорта" />
+          <ScalarProperty Name="код_вида_спорта" ColumnName="код_вида_спорта" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Города">
+      <EntityTypeMapping TypeName="Витязь_БДModel.Города">
+        <MappingFragment StoreEntitySet="Города">
+          <ScalarProperty Name="наименование" ColumnName="наименование" />
+          <ScalarProperty Name="код_города" ColumnName="код_города" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Должности">
+      <EntityTypeMapping TypeName="Витязь_БДModel.Должности">
+        <MappingFragment StoreEntitySet="Должности">
+          <ScalarProperty Name="наименование" ColumnName="наименование" />
+          <ScalarProperty Name="код_должности" ColumnName="код_должности" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Звания">
+      <EntityTypeMapping TypeName="Витязь_БДModel.Звания">
+        <MappingFragment StoreEntitySet="Звания">
+          <ScalarProperty Name="наименование" ColumnName="наименование" />
+          <ScalarProperty Name="код_звания" ColumnName="код_звания" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Команды">
+      <EntityTypeMapping TypeName="Витязь_БДModel.Команды">
+        <MappingFragment StoreEntitySet="Команды">
+          <ScalarProperty Name="номер_трансфера" ColumnName="номер_трансфера" />
+          <ScalarProperty Name="название" ColumnName="название" />
+          <ScalarProperty Name="код_команды" ColumnName="код_команды" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Пользователи">
+      <EntityTypeMapping TypeName="Витязь_БДModel.Пользователи">
+        <MappingFragment StoreEntitySet="Пользователи">
+          <ScalarProperty Name="код_роли" ColumnName="код_роли" />
+          <ScalarProperty Name="пароль" ColumnName="пароль" />
+          <ScalarProperty Name="логин" ColumnName="логин" />
+          <ScalarProperty Name="код" ColumnName="код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Помещения">
+      <EntityTypeMapping TypeName="Витязь_БДModel.Помещения">
+        <MappingFragment StoreEntitySet="Помещения">
+          <ScalarProperty Name="номер_дома" ColumnName="номер_дома" />
+          <ScalarProperty Name="код_улицы" ColumnName="код_улицы" />
+          <ScalarProperty Name="код_города" ColumnName="код_города" />
+          <ScalarProperty Name="наименование" ColumnName="наименование" />
+          <ScalarProperty Name="код_помещения" ColumnName="код_помещения" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Программы_тренировок">
+      <EntityTypeMapping TypeName="Витязь_БДModel.Программы_тренировок">
+        <MappingFragment StoreEntitySet="Программы_тренировок">
+          <ScalarProperty Name="код_типа_тренировки" ColumnName="код_типа_тренировки" />
+          <ScalarProperty Name="код_вида_спорта" ColumnName="код_вида_спорта" />
+          <ScalarProperty Name="код_помещения" ColumnName="код_помещения" />
+          <ScalarProperty Name="код_сотрудника" ColumnName="код_сотрудника" />
+          <ScalarProperty Name="длительность_в_часах" ColumnName="длительность_в_часах" />
+          <ScalarProperty Name="код_программы" ColumnName="код_программы" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Разряды">
+      <EntityTypeMapping TypeName="Витязь_БДModel.Разряды">
+        <MappingFragment StoreEntitySet="Разряды">
+          <ScalarProperty Name="наименование" ColumnName="наименование" />
+          <ScalarProperty Name="код_разряда" ColumnName="код_разряда" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Роли">
+      <EntityTypeMapping TypeName="Витязь_БДModel.Роли">
+        <MappingFragment StoreEntitySet="Роли">
+          <ScalarProperty Name="название" ColumnName="название" />
+          <ScalarProperty Name="код" ColumnName="код" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Сотрудники">
+      <EntityTypeMapping TypeName="Витязь_БДModel.Сотрудники">
+        <MappingFragment StoreEntitySet="Сотрудники">
+          <ScalarProperty Name="код_должности" ColumnName="код_должности" />
+          <ScalarProperty Name="номер_телефона" ColumnName="номер_телефона" />
+          <ScalarProperty Name="отчество" ColumnName="отчество" />
+          <ScalarProperty Name="имя" ColumnName="имя" />
+          <ScalarProperty Name="фамилия" ColumnName="фамилия" />
+          <ScalarProperty Name="код_сотрудника" ColumnName="код_сотрудника" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Спортсмены">
+      <EntityTypeMapping TypeName="Витязь_БДModel.Спортсмены">
+        <MappingFragment StoreEntitySet="Спортсмены">
+          <ScalarProperty Name="дата_рождения" ColumnName="дата_рождения" />
+          <ScalarProperty Name="код_команды" ColumnName="код_команды" />
+          <ScalarProperty Name="код_звания" ColumnName="код_звания" />
+          <ScalarProperty Name="код_разряда" ColumnName="код_разряда" />
+          <ScalarProperty Name="отчество" ColumnName="отчество" />
+          <ScalarProperty Name="имя" ColumnName="имя" />
+          <ScalarProperty Name="фамилия" ColumnName="фамилия" />
+          <ScalarProperty Name="код_спортсмена" ColumnName="код_спортсмена" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Типы_спорта">
+      <EntityTypeMapping TypeName="Витязь_БДModel.Типы_спорта">
+        <MappingFragment StoreEntitySet="Типы_спорта">
+          <ScalarProperty Name="тип" ColumnName="тип" />
+          <ScalarProperty Name="код_типа_спорта" ColumnName="код_типа_спорта" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Типы_тренировок">
+      <EntityTypeMapping TypeName="Витязь_БДModel.Типы_тренировок">
+        <MappingFragment StoreEntitySet="Типы_тренировок">
+          <ScalarProperty Name="тип_тренировки" ColumnName="тип_тренировки" />
+          <ScalarProperty Name="код_типа_тренировки" ColumnName="код_типа_тренировки" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Трансферы">
+      <EntityTypeMapping TypeName="Витязь_БДModel.Трансферы">
+        <MappingFragment StoreEntitySet="Трансферы">
+          <ScalarProperty Name="марка" ColumnName="марка" />
+          <ScalarProperty Name="тип_автомобиля" ColumnName="тип_автомобиля" />
+          <ScalarProperty Name="автомобильный_номер" ColumnName="автомобильный_номер" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Турниры">
+      <EntityTypeMapping TypeName="Витязь_БДModel.Турниры">
+        <MappingFragment StoreEntitySet="Турниры">
+          <ScalarProperty Name="номер_дома" ColumnName="номер_дома" />
+          <ScalarProperty Name="код_вида_спорта" ColumnName="код_вида_спорта" />
+          <ScalarProperty Name="конец_турнира" ColumnName="конец_турнира" />
+          <ScalarProperty Name="начало_турнира" ColumnName="начало_турнира" />
+          <ScalarProperty Name="код_города" ColumnName="код_города" />
+          <ScalarProperty Name="код_улицы" ColumnName="код_улицы" />
+          <ScalarProperty Name="наименование" ColumnName="наименование" />
+          <ScalarProperty Name="код_турнира" ColumnName="код_турнира" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Улицы">
+      <EntityTypeMapping TypeName="Витязь_БДModel.Улицы">
+        <MappingFragment StoreEntitySet="Улицы">
+          <ScalarProperty Name="наименование" ColumnName="наименование" />
+          <ScalarProperty Name="код_улицы" ColumnName="код_улицы" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Команды_в_турнире" TypeName="Витязь_БДModel.Команды_в_турнире" StoreEntitySet="Команды_в_турнире">
+      <EndProperty Name="Турниры">
+        <ScalarProperty Name="код_турнира" ColumnName="код_турнира" />
+      </EndProperty>
+      <EndProperty Name="Команды">
+        <ScalarProperty Name="код_команды" ColumnName="код_команды" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Спортсмены_в_виде_спорта" TypeName="Витязь_БДModel.Спортсмены_в_виде_спорта" StoreEntitySet="Спортсмены_в_виде_спорта">
+      <EndProperty Name="Спортсмены">
+        <ScalarProperty Name="код_спортсмена" ColumnName="код_спортсмена" />
+      </EndProperty>
+      <EndProperty Name="виды_спорта">
+        <ScalarProperty Name="код_вида_спорта" ColumnName="код_вида_спорта" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="спортсмены_программы_тренировок" TypeName="Витязь_БДModel.спортсмены_программы_тренировок" StoreEntitySet="спортсмены_программы_тренировок">
+      <EndProperty Name="Спортсмены">
+        <ScalarProperty Name="код_спортсмена" ColumnName="код_спортсмена" />
+      </EndProperty>
+      <EndProperty Name="Программы_тренировок">
+        <ScalarProperty Name="код_программы" ColumnName="код_программы" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Спортсмены_Турниры" TypeName="Витязь_БДModel.Спортсмены_Турниры" StoreEntitySet="Спортсмены_Турниры">
+      <EndProperty Name="Турниры">
+        <ScalarProperty Name="код_турнира" ColumnName="код_турнира" />
+      </EndProperty>
+      <EndProperty Name="Спортсмены">
+        <ScalarProperty Name="код_спортсмена" ColumnName="код_спортсмена" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

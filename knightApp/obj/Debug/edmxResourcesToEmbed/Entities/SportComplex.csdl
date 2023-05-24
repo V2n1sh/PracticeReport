@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SportComplexModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SportComplexEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Athletes" EntityType="SportComplexModel.Athletes" />
+    <EntitySet Name="AthletesInTheTournaments" EntityType="SportComplexModel.AthletesInTheTournaments" />
+    <EntitySet Name="Cities" EntityType="SportComplexModel.Cities" />
+    <EntitySet Name="Discharges" EntityType="SportComplexModel.Discharges" />
+    <EntitySet Name="Positions" EntityType="SportComplexModel.Positions" />
+    <EntitySet Name="Premises" EntityType="SportComplexModel.Premises" />
+    <EntitySet Name="Roles" EntityType="SportComplexModel.Roles" />
+    <EntitySet Name="SortsOfSports" EntityType="SportComplexModel.SortsOfSports" />
+    <EntitySet Name="Staff" EntityType="SportComplexModel.Staff" />
+    <EntitySet Name="Streets" EntityType="SportComplexModel.Streets" />
+    <EntitySet Name="sysdiagrams" EntityType="SportComplexModel.sysdiagrams" />
+    <EntitySet Name="Teams" EntityType="SportComplexModel.Teams" />
+    <EntitySet Name="Titles" EntityType="SportComplexModel.Titles" />
+    <EntitySet Name="Tournaments" EntityType="SportComplexModel.Tournaments" />
+    <EntitySet Name="TrainingPrograms" EntityType="SportComplexModel.TrainingPrograms" />
+    <EntitySet Name="Transfers" EntityType="SportComplexModel.Transfers" />
+    <EntitySet Name="Type_of_car" EntityType="SportComplexModel.Type_of_car" />
+    <EntitySet Name="TypesOfSports" EntityType="SportComplexModel.TypesOfSports" />
+    <EntitySet Name="TypesOfTraining" EntityType="SportComplexModel.TypesOfTraining" />
+    <EntitySet Name="Users" EntityType="SportComplexModel.Users" />
+    <EntitySet Name="Users_images" EntityType="SportComplexModel.Users_images" />
+    <AssociationSet Name="FK_Athletes_Discharges" Association="SportComplexModel.FK_Athletes_Discharges">
+      <End Role="Discharges" EntitySet="Discharges" />
+      <End Role="Athletes" EntitySet="Athletes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Athletes_SortsOfSports" Association="SportComplexModel.FK_Athletes_SortsOfSports">
+      <End Role="SortsOfSports" EntitySet="SortsOfSports" />
+      <End Role="Athletes" EntitySet="Athletes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Athletes_Titles" Association="SportComplexModel.FK_Athletes_Titles">
+      <End Role="Titles" EntitySet="Titles" />
+      <End Role="Athletes" EntitySet="Athletes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Athletes_Users_images" Association="SportComplexModel.FK_Athletes_Users_images">
+      <End Role="Users_images" EntitySet="Users_images" />
+      <End Role="Athletes" EntitySet="Athletes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Athletes_Турниры_Athletes" Association="SportComplexModel.FK_Athletes_Турниры_Athletes">
+      <End Role="Athletes" EntitySet="Athletes" />
+      <End Role="AthletesInTheTournaments" EntitySet="AthletesInTheTournaments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Спортсмены_Команды" Association="SportComplexModel.FK_Спортсмены_Команды">
+      <End Role="Teams" EntitySet="Teams" />
+      <End Role="Athletes" EntitySet="Athletes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Спортсмены_Турниры_Спортсмены" Association="SportComplexModel.FK_Спортсмены_Турниры_Спортсмены">
+      <End Role="Athletes" EntitySet="Athletes" />
+      <End Role="AthletesInTheTournaments" EntitySet="AthletesInTheTournaments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Athletes_Турниры_Турниры" Association="SportComplexModel.FK_Athletes_Турниры_Турниры">
+      <End Role="Tournaments" EntitySet="Tournaments" />
+      <End Role="AthletesInTheTournaments" EntitySet="AthletesInTheTournaments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Спортсмены_Турниры_Турниры" Association="SportComplexModel.FK_Спортсмены_Турниры_Турниры">
+      <End Role="Tournaments" EntitySet="Tournaments" />
+      <End Role="AthletesInTheTournaments" EntitySet="AthletesInTheTournaments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Помещения_Города" Association="SportComplexModel.FK_Помещения_Города">
+      <End Role="Cities" EntitySet="Cities" />
+      <End Role="Premises" EntitySet="Premises" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Турниры_Города" Association="SportComplexModel.FK_Турниры_Города">
+      <End Role="Cities" EntitySet="Cities" />
+      <End Role="Tournaments" EntitySet="Tournaments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Staff_Positions" Association="SportComplexModel.FK_Staff_Positions">
+      <End Role="Positions" EntitySet="Positions" />
+      <End Role="Staff" EntitySet="Staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Помещения_Улицы" Association="SportComplexModel.FK_Помещения_Улицы">
+      <End Role="Streets" EntitySet="Streets" />
+      <End Role="Premises" EntitySet="Premises" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Программы_тренировок_Помещения" Association="SportComplexModel.FK_Программы_тренировок_Помещения">
+      <End Role="Premises" EntitySet="Premises" />
+      <End Role="TrainingPrograms" EntitySet="TrainingPrograms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="SportComplexModel.FK_Users_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_виды_спорта_Типы_спорта" Association="SportComplexModel.FK_виды_спорта_Типы_спорта">
+      <End Role="TypesOfSports" EntitySet="TypesOfSports" />
+      <End Role="SortsOfSports" EntitySet="SortsOfSports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Турниры_виды_спорта1" Association="SportComplexModel.FK_Турниры_виды_спорта1">
+      <End Role="SortsOfSports" EntitySet="SortsOfSports" />
+      <End Role="Tournaments" EntitySet="Tournaments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Staff_Users_images" Association="SportComplexModel.FK_Staff_Users_images">
+      <End Role="Users_images" EntitySet="Users_images" />
+      <End Role="Staff" EntitySet="Staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Программы_тренировок_Staff" Association="SportComplexModel.FK_Программы_тренировок_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="TrainingPrograms" EntitySet="TrainingPrograms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Турниры_Улицы" Association="SportComplexModel.FK_Турниры_Улицы">
+      <End Role="Streets" EntitySet="Streets" />
+      <End Role="Tournaments" EntitySet="Tournaments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teams_Transfers" Association="SportComplexModel.FK_Teams_Transfers">
+      <End Role="Transfers" EntitySet="Transfers" />
+      <End Role="Teams" EntitySet="Teams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TrainingPrograms_TypesOfTraining" Association="SportComplexModel.FK_TrainingPrograms_TypesOfTraining">
+      <End Role="TypesOfTraining" EntitySet="TypesOfTraining" />
+      <End Role="TrainingPrograms" EntitySet="TrainingPrograms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transfers_Type_of_car" Association="SportComplexModel.FK_Transfers_Type_of_car">
+      <End Role="Type_of_car" EntitySet="Type_of_car" />
+      <End Role="Transfers" EntitySet="Transfers" />
+    </AssociationSet>
+    <AssociationSet Name="AthletesInTheSport" Association="SportComplexModel.AthletesInTheSport">
+      <End Role="Athletes" EntitySet="Athletes" />
+      <End Role="SortsOfSports" EntitySet="SortsOfSports" />
+    </AssociationSet>
+    <AssociationSet Name="AthletesInTrainingPrograms" Association="SportComplexModel.AthletesInTrainingPrograms">
+      <End Role="Athletes" EntitySet="Athletes" />
+      <End Role="TrainingPrograms" EntitySet="TrainingPrograms" />
+    </AssociationSet>
+    <AssociationSet Name="TeamsInTheTournament" Association="SportComplexModel.TeamsInTheTournament">
+      <End Role="Teams" EntitySet="Teams" />
+      <End Role="Tournaments" EntitySet="Tournaments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Athletes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="lastname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="firstname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="patronymic" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="discharge_id" Type="Int32" />
+    <Property Name="title_id" Type="Int32" />
+    <Property Name="team_id" Type="Int32" />
+    <Property Name="birthday" Type="DateTime" Precision="0" />
+    <Property Name="image_id" Type="Int32" />
+    <Property Name="sortOfSport_id" Type="Int32" />
+    <NavigationProperty Name="Discharges" Relationship="SportComplexModel.FK_Athletes_Discharges" FromRole="Athletes" ToRole="Discharges" />
+    <NavigationProperty Name="SortsOfSports" Relationship="SportComplexModel.FK_Athletes_SortsOfSports" FromRole="Athletes" ToRole="SortsOfSports" />
+    <NavigationProperty Name="Titles" Relationship="SportComplexModel.FK_Athletes_Titles" FromRole="Athletes" ToRole="Titles" />
+    <NavigationProperty Name="Users_images" Relationship="SportComplexModel.FK_Athletes_Users_images" FromRole="Athletes" ToRole="Users_images" />
+    <NavigationProperty Name="AthletesInTheTournaments" Relationship="SportComplexModel.FK_Athletes_Турниры_Athletes" FromRole="Athletes" ToRole="AthletesInTheTournaments" />
+    <NavigationProperty Name="Teams" Relationship="SportComplexModel.FK_Спортсмены_Команды" FromRole="Athletes" ToRole="Teams" />
+    <NavigationProperty Name="AthletesInTheTournaments1" Relationship="SportComplexModel.FK_Спортсмены_Турниры_Спортсмены" FromRole="Athletes" ToRole="AthletesInTheTournaments" />
+    <NavigationProperty Name="SortsOfSports1" Relationship="SportComplexModel.AthletesInTheSport" FromRole="Athletes" ToRole="SortsOfSports" />
+    <NavigationProperty Name="TrainingPrograms" Relationship="SportComplexModel.AthletesInTrainingPrograms" FromRole="Athletes" ToRole="TrainingPrograms" />
+  </EntityType>
+  <EntityType Name="AthletesInTheTournaments">
+    <Key>
+      <PropertyRef Name="athlete_id" />
+      <PropertyRef Name="tournament_id" />
+    </Key>
+    <Property Name="athlete_id" Type="Int32" Nullable="false" />
+    <Property Name="tournament_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Athletes" Relationship="SportComplexModel.FK_Athletes_Турниры_Athletes" FromRole="AthletesInTheTournaments" ToRole="Athletes" />
+    <NavigationProperty Name="Athletes1" Relationship="SportComplexModel.FK_Спортсмены_Турниры_Спортсмены" FromRole="AthletesInTheTournaments" ToRole="Athletes" />
+    <NavigationProperty Name="Tournaments" Relationship="SportComplexModel.FK_Athletes_Турниры_Турниры" FromRole="AthletesInTheTournaments" ToRole="Tournaments" />
+    <NavigationProperty Name="Tournaments1" Relationship="SportComplexModel.FK_Спортсмены_Турниры_Турниры" FromRole="AthletesInTheTournaments" ToRole="Tournaments" />
+  </EntityType>
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Premises" Relationship="SportComplexModel.FK_Помещения_Города" FromRole="Cities" ToRole="Premises" />
+    <NavigationProperty Name="Tournaments" Relationship="SportComplexModel.FK_Турниры_Города" FromRole="Cities" ToRole="Tournaments" />
+  </EntityType>
+  <EntityType Name="Discharges">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Athletes" Relationship="SportComplexModel.FK_Athletes_Discharges" FromRole="Discharges" ToRole="Athletes" />
+  </EntityType>
+  <EntityType Name="Positions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Staff" Relationship="SportComplexModel.FK_Staff_Positions" FromRole="Positions" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="Premises">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="city_id" Type="Int32" />
+    <Property Name="street_id" Type="Int32" />
+    <Property Name="home_number" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cities" Relationship="SportComplexModel.FK_Помещения_Города" FromRole="Premises" ToRole="Cities" />
+    <NavigationProperty Name="Streets" Relationship="SportComplexModel.FK_Помещения_Улицы" FromRole="Premises" ToRole="Streets" />
+    <NavigationProperty Name="TrainingPrograms" Relationship="SportComplexModel.FK_Программы_тренировок_Помещения" FromRole="Premises" ToRole="TrainingPrograms" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Users" Relationship="SportComplexModel.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="SortsOfSports">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="types_of_sport_id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Athletes" Relationship="SportComplexModel.FK_Athletes_SortsOfSports" FromRole="SortsOfSports" ToRole="Athletes" />
+    <NavigationProperty Name="TypesOfSports" Relationship="SportComplexModel.FK_виды_спорта_Типы_спорта" FromRole="SortsOfSports" ToRole="TypesOfSports" />
+    <NavigationProperty Name="Tournaments" Relationship="SportComplexModel.FK_Турниры_виды_спорта1" FromRole="SortsOfSports" ToRole="Tournaments" />
+    <NavigationProperty Name="Athletes1" Relationship="SportComplexModel.AthletesInTheSport" FromRole="SortsOfSports" ToRole="Athletes" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="lastname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="firstname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="patronymic" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="phone_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="position_id" Type="Int32" />
+    <Property Name="image_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Positions" Relationship="SportComplexModel.FK_Staff_Positions" FromRole="Staff" ToRole="Positions" />
+    <NavigationProperty Name="Users_images" Relationship="SportComplexModel.FK_Staff_Users_images" FromRole="Staff" ToRole="Users_images" />
+    <NavigationProperty Name="TrainingPrograms" Relationship="SportComplexModel.FK_Программы_тренировок_Staff" FromRole="Staff" ToRole="TrainingPrograms" />
+  </EntityType>
+  <EntityType Name="Streets">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Premises" Relationship="SportComplexModel.FK_Помещения_Улицы" FromRole="Streets" ToRole="Premises" />
+    <NavigationProperty Name="Tournaments" Relationship="SportComplexModel.FK_Турниры_Улицы" FromRole="Streets" ToRole="Tournaments" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Teams">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="transfer_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Athletes" Relationship="SportComplexModel.FK_Спортсмены_Команды" FromRole="Teams" ToRole="Athletes" />
+    <NavigationProperty Name="Transfers" Relationship="SportComplexModel.FK_Teams_Transfers" FromRole="Teams" ToRole="Transfers" />
+    <NavigationProperty Name="Tournaments" Relationship="SportComplexModel.TeamsInTheTournament" FromRole="Teams" ToRole="Tournaments" />
+  </EntityType>
+  <EntityType Name="Titles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Athletes" Relationship="SportComplexModel.FK_Athletes_Titles" FromRole="Titles" ToRole="Athletes" />
+  </EntityType>
+  <EntityType Name="Tournaments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="street_id" Type="Int32" />
+    <Property Name="city_id" Type="Int32" />
+    <Property Name="tournament_start" Type="DateTime" Precision="0" />
+    <Property Name="tournament_end" Type="DateTime" Precision="0" />
+    <Property Name="sort_of_sport_od" Type="Int32" />
+    <Property Name="home_number" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AthletesInTheTournaments" Relationship="SportComplexModel.FK_Athletes_Турниры_Турниры" FromRole="Tournaments" ToRole="AthletesInTheTournaments" />
+    <NavigationProperty Name="AthletesInTheTournaments1" Relationship="SportComplexModel.FK_Спортсмены_Турниры_Турниры" FromRole="Tournaments" ToRole="AthletesInTheTournaments" />
+    <NavigationProperty Name="Cities" Relationship="SportComplexModel.FK_Турниры_Города" FromRole="Tournaments" ToRole="Cities" />
+    <NavigationProperty Name="SortsOfSports" Relationship="SportComplexModel.FK_Турниры_виды_спорта1" FromRole="Tournaments" ToRole="SortsOfSports" />
+    <NavigationProperty Name="Streets" Relationship="SportComplexModel.FK_Турниры_Улицы" FromRole="Tournaments" ToRole="Streets" />
+    <NavigationProperty Name="Teams" Relationship="SportComplexModel.TeamsInTheTournament" FromRole="Tournaments" ToRole="Teams" />
+  </EntityType>
+  <EntityType Name="TrainingPrograms">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="duration_in_hours" Type="Double" Nullable="false" />
+    <Property Name="staffer_id" Type="Int32" />
+    <Property Name="premise_id" Type="Int32" />
+    <Property Name="sort_of_sport_id" Type="Int32" />
+    <Property Name="type_of_training_id" Type="Int32" />
+    <NavigationProperty Name="Premises" Relationship="SportComplexModel.FK_Программы_тренировок_Помещения" FromRole="TrainingPrograms" ToRole="Premises" />
+    <NavigationProperty Name="Staff" Relationship="SportComplexModel.FK_Программы_тренировок_Staff" FromRole="TrainingPrograms" ToRole="Staff" />
+    <NavigationProperty Name="TypesOfTraining" Relationship="SportComplexModel.FK_TrainingPrograms_TypesOfTraining" FromRole="TrainingPrograms" ToRole="TypesOfTraining" />
+    <NavigationProperty Name="Athletes" Relationship="SportComplexModel.AthletesInTrainingPrograms" FromRole="TrainingPrograms" ToRole="Athletes" />
+  </EntityType>
+  <EntityType Name="Transfers">
+    <Key>
+      <PropertyRef Name="car_number" />
+    </Key>
+    <Property Name="car_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="type_of_car" Type="Int32" Nullable="false" />
+    <Property Name="brand" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Teams" Relationship="SportComplexModel.FK_Teams_Transfers" FromRole="Transfers" ToRole="Teams" />
+    <NavigationProperty Name="Type_of_car1" Relationship="SportComplexModel.FK_Transfers_Type_of_car" FromRole="Transfers" ToRole="Type_of_car" />
+  </EntityType>
+  <EntityType Name="Type_of_car">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type_of_car1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Transfers" Relationship="SportComplexModel.FK_Transfers_Type_of_car" FromRole="Type_of_car" ToRole="Transfers" />
+  </EntityType>
+  <EntityType Name="TypesOfSports">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="SortsOfSports" Relationship="SportComplexModel.FK_виды_спорта_Типы_спорта" FromRole="TypesOfSports" ToRole="SortsOfSports" />
+  </EntityType>
+  <EntityType Name="TypesOfTraining">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TrainingPrograms" Relationship="SportComplexModel.FK_TrainingPrograms_TypesOfTraining" FromRole="TypesOfTraining" ToRole="TrainingPrograms" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_login" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="user_password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="role_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Roles" Relationship="SportComplexModel.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="Users_images">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Athletes" Relationship="SportComplexModel.FK_Athletes_Users_images" FromRole="Users_images" ToRole="Athletes" />
+    <NavigationProperty Name="Staff" Relationship="SportComplexModel.FK_Staff_Users_images" FromRole="Users_images" ToRole="Staff" />
+  </EntityType>
+  <Association Name="FK_Athletes_Discharges">
+    <End Type="SportComplexModel.Discharges" Role="Discharges" Multiplicity="0..1" />
+    <End Type="SportComplexModel.Athletes" Role="Athletes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Discharges">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Athletes">
+        <PropertyRef Name="discharge_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Athletes_SortsOfSports">
+    <End Type="SportComplexModel.SortsOfSports" Role="SortsOfSports" Multiplicity="0..1" />
+    <End Type="SportComplexModel.Athletes" Role="Athletes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SortsOfSports">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Athletes">
+        <PropertyRef Name="sortOfSport_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Athletes_Titles">
+    <End Type="SportComplexModel.Titles" Role="Titles" Multiplicity="0..1" />
+    <End Type="SportComplexModel.Athletes" Role="Athletes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Titles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Athletes">
+        <PropertyRef Name="title_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Athletes_Users_images">
+    <End Type="SportComplexModel.Users_images" Role="Users_images" Multiplicity="0..1" />
+    <End Type="SportComplexModel.Athletes" Role="Athletes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users_images">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Athletes">
+        <PropertyRef Name="image_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Athletes_Турниры_Athletes">
+    <End Type="SportComplexModel.Athletes" Role="Athletes" Multiplicity="1" />
+    <End Type="SportComplexModel.AthletesInTheTournaments" Role="AthletesInTheTournaments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Athletes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="AthletesInTheTournaments">
+        <PropertyRef Name="athlete_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Спортсмены_Команды">
+    <End Type="SportComplexModel.Teams" Role="Teams" Multiplicity="0..1" />
+    <End Type="SportComplexModel.Athletes" Role="Athletes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teams">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Athletes">
+        <PropertyRef Name="team_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Спортсмены_Турниры_Спортсмены">
+    <End Type="SportComplexModel.Athletes" Role="Athletes" Multiplicity="1" />
+    <End Type="SportComplexModel.AthletesInTheTournaments" Role="AthletesInTheTournaments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Athletes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="AthletesInTheTournaments">
+        <PropertyRef Name="athlete_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Athletes_Турниры_Турниры">
+    <End Type="SportComplexModel.Tournaments" Role="Tournaments" Multiplicity="1" />
+    <End Type="SportComplexModel.AthletesInTheTournaments" Role="AthletesInTheTournaments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tournaments">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="AthletesInTheTournaments">
+        <PropertyRef Name="tournament_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Спортсмены_Турниры_Турниры">
+    <End Type="SportComplexModel.Tournaments" Role="Tournaments" Multiplicity="1" />
+    <End Type="SportComplexModel.AthletesInTheTournaments" Role="AthletesInTheTournaments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tournaments">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="AthletesInTheTournaments">
+        <PropertyRef Name="tournament_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Помещения_Города">
+    <End Type="SportComplexModel.Cities" Role="Cities" Multiplicity="0..1" />
+    <End Type="SportComplexModel.Premises" Role="Premises" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cities">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Premises">
+        <PropertyRef Name="city_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Турниры_Города">
+    <End Type="SportComplexModel.Cities" Role="Cities" Multiplicity="0..1" />
+    <End Type="SportComplexModel.Tournaments" Role="Tournaments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cities">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tournaments">
+        <PropertyRef Name="city_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Staff_Positions">
+    <End Type="SportComplexModel.Positions" Role="Positions" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SportComplexModel.Staff" Role="Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Positions">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="position_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Помещения_Улицы">
+    <End Type="SportComplexModel.Streets" Role="Streets" Multiplicity="0..1" />
+    <End Type="SportComplexModel.Premises" Role="Premises" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Streets">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Premises">
+        <PropertyRef Name="street_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Программы_тренировок_Помещения">
+    <End Type="SportComplexModel.Premises" Role="Premises" Multiplicity="0..1" />
+    <End Type="SportComplexModel.TrainingPrograms" Role="TrainingPrograms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Premises">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TrainingPrograms">
+        <PropertyRef Name="premise_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles">
+    <End Type="SportComplexModel.Roles" Role="Roles" Multiplicity="1" />
+    <End Type="SportComplexModel.Users" Role="Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_виды_спорта_Типы_спорта">
+    <End Type="SportComplexModel.TypesOfSports" Role="TypesOfSports" Multiplicity="1" />
+    <End Type="SportComplexModel.SortsOfSports" Role="SortsOfSports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypesOfSports">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SortsOfSports">
+        <PropertyRef Name="types_of_sport_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Турниры_виды_спорта1">
+    <End Type="SportComplexModel.SortsOfSports" Role="SortsOfSports" Multiplicity="0..1" />
+    <End Type="SportComplexModel.Tournaments" Role="Tournaments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SortsOfSports">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tournaments">
+        <PropertyRef Name="sort_of_sport_od" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Staff_Users_images">
+    <End Type="SportComplexModel.Users_images" Role="Users_images" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SportComplexModel.Staff" Role="Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users_images">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="image_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Программы_тренировок_Staff">
+    <End Type="SportComplexModel.Staff" Role="Staff" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SportComplexModel.TrainingPrograms" Role="TrainingPrograms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TrainingPrograms">
+        <PropertyRef Name="staffer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Турниры_Улицы">
+    <End Type="SportComplexModel.Streets" Role="Streets" Multiplicity="0..1" />
+    <End Type="SportComplexModel.Tournaments" Role="Tournaments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Streets">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tournaments">
+        <PropertyRef Name="street_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teams_Transfers">
+    <End Type="SportComplexModel.Transfers" Role="Transfers" Multiplicity="1" />
+    <End Type="SportComplexModel.Teams" Role="Teams" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transfers">
+        <PropertyRef Name="car_number" />
+      </Principal>
+      <Dependent Role="Teams">
+        <PropertyRef Name="transfer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TrainingPrograms_TypesOfTraining">
+    <End Type="SportComplexModel.TypesOfTraining" Role="TypesOfTraining" Multiplicity="0..1" />
+    <End Type="SportComplexModel.TrainingPrograms" Role="TrainingPrograms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypesOfTraining">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TrainingPrograms">
+        <PropertyRef Name="type_of_training_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transfers_Type_of_car">
+    <End Type="SportComplexModel.Type_of_car" Role="Type_of_car" Multiplicity="1" />
+    <End Type="SportComplexModel.Transfers" Role="Transfers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Type_of_car">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Transfers">
+        <PropertyRef Name="type_of_car" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AthletesInTheSport">
+    <End Type="SportComplexModel.Athletes" Role="Athletes" Multiplicity="*" />
+    <End Type="SportComplexModel.SortsOfSports" Role="SortsOfSports" Multiplicity="*" />
+  </Association>
+  <Association Name="AthletesInTrainingPrograms">
+    <End Type="SportComplexModel.Athletes" Role="Athletes" Multiplicity="*" />
+    <End Type="SportComplexModel.TrainingPrograms" Role="TrainingPrograms" Multiplicity="*" />
+  </Association>
+  <Association Name="TeamsInTheTournament">
+    <End Type="SportComplexModel.Teams" Role="Teams" Multiplicity="*" />
+    <End Type="SportComplexModel.Tournaments" Role="Tournaments" Multiplicity="*" />
+  </Association>
+</Schema>

@@ -1,0 +1,94 @@
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\bin\Debug\knightApp.exe.config
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\bin\Debug\knightApp.exe
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\bin\Debug\knightApp.pdb
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\knightApp.csproj.AssemblyReference.cache
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\knightApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\MainWindow.g.cs
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\App.g.cs
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\knightApp_MarkupCompile.cache
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\knightApp_MarkupCompile.lref
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\MainWindow.baml
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\knightApp.g.resources
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\knightApp.Properties.Resources.resources
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\knightApp.csproj.GenerateResource.cache
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\knightApp.csproj.CoreCompileInputs.cache
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\knightApp.exe
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\knightApp.pdb
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\App.baml
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\Pages\AllSections.g.cs
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\Pages\AllSections.baml
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\bin\Debug\EntityFramework.dll
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\bin\Debug\EntityFramework.xml
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\Pages\Sportsman.g.cs
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\knightApp_Content.g.cs
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\Pages\Sportsman.baml
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\knightApp.csproj.CopyComplete
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\Pages\DataSportsman.g.cs
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\Pages\DataSportsman.baml
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\Pages\Autorization.g.cs
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\Pages\Registration.g.cs
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\Pages\Autorization.baml
+C:\Users\vanci\OneDrive\Рабочий стол\CP_RPM\CourseWork\knightApp\knightApp\obj\Debug\Pages\Registration.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\bin\Debug\knightApp.exe.config
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\bin\Debug\knightApp.exe
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\bin\Debug\knightApp.pdb
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\bin\Debug\EntityFramework.dll
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\bin\Debug\EntityFramework.xml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\knightApp.csproj.AssemblyReference.cache
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\knightApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\MainWindow.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\AllSections.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\Autorization.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\DataSportsman.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\Sportsman.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\App.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\knightApp_Content.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\knightApp_MarkupCompile.cache
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\knightApp_MarkupCompile.lref
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\App.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\MainWindow.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\AllSections.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\Autorization.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\DataSportsman.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\Sportsman.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\knightApp.g.resources
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\knightApp.Properties.Resources.resources
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\knightApp.csproj.GenerateResource.cache
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\knightApp.csproj.CoreCompileInputs.cache
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\knightApp.csproj.CopyComplete
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\knightApp.exe
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\knightApp.pdb
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\DataEmployee.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\Employee.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\DataEmployee.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\Employee.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\Tournaments.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\Tournaments.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\DataTournaments.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\DataTournaments.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\Positions.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\Positions.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\SortsOfSport.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\SortsOfSport.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\DataTeams.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\Teams.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\DataTeams.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\Teams.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\AddSportsman.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\AddSportsman.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\AddStaffer.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\AddStaffer.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\AddTournament.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\AddTournament.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\AddPositions.g.cs
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\obj\Debug\Pages\AddPositions.baml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\bin\Debug\itextsharp.dll
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\bin\Debug\itextsharp.xml
+C:\Users\Кристина\Desktop\CourseWork\knightApp\knightApp\bin\Debug\ru\EntityFramework.SqlServer.resources.dll

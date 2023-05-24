@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище SportComplexModelContainer" CdmEntityContainer="SportComplexEntities">
+    <EntitySetMapping Name="Athletes">
+      <EntityTypeMapping TypeName="SportComplexModel.Athletes">
+        <MappingFragment StoreEntitySet="Athletes">
+          <ScalarProperty Name="sortOfSport_id" ColumnName="sortOfSport_id" />
+          <ScalarProperty Name="image_id" ColumnName="image_id" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="team_id" ColumnName="team_id" />
+          <ScalarProperty Name="title_id" ColumnName="title_id" />
+          <ScalarProperty Name="discharge_id" ColumnName="discharge_id" />
+          <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AthletesInTheTournaments">
+      <EntityTypeMapping TypeName="SportComplexModel.AthletesInTheTournaments">
+        <MappingFragment StoreEntitySet="AthletesInTheTournaments">
+          <ScalarProperty Name="tournament_id" ColumnName="tournament_id" />
+          <ScalarProperty Name="athlete_id" ColumnName="athlete_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="SportComplexModel.Cities">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Discharges">
+      <EntityTypeMapping TypeName="SportComplexModel.Discharges">
+        <MappingFragment StoreEntitySet="Discharges">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Positions">
+      <EntityTypeMapping TypeName="SportComplexModel.Positions">
+        <MappingFragment StoreEntitySet="Positions">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Premises">
+      <EntityTypeMapping TypeName="SportComplexModel.Premises">
+        <MappingFragment StoreEntitySet="Premises">
+          <ScalarProperty Name="home_number" ColumnName="home_number" />
+          <ScalarProperty Name="street_id" ColumnName="street_id" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="SportComplexModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SortsOfSports">
+      <EntityTypeMapping TypeName="SportComplexModel.SortsOfSports">
+        <MappingFragment StoreEntitySet="SortsOfSports">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="types_of_sport_id" ColumnName="types_of_sport_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staff">
+      <EntityTypeMapping TypeName="SportComplexModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="image_id" ColumnName="image_id" />
+          <ScalarProperty Name="position_id" ColumnName="position_id" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Streets">
+      <EntityTypeMapping TypeName="SportComplexModel.Streets">
+        <MappingFragment StoreEntitySet="Streets">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SportComplexModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teams">
+      <EntityTypeMapping TypeName="SportComplexModel.Teams">
+        <MappingFragment StoreEntitySet="Teams">
+          <ScalarProperty Name="transfer_id" ColumnName="transfer_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Titles">
+      <EntityTypeMapping TypeName="SportComplexModel.Titles">
+        <MappingFragment StoreEntitySet="Titles">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tournaments">
+      <EntityTypeMapping TypeName="SportComplexModel.Tournaments">
+        <MappingFragment StoreEntitySet="Tournaments">
+          <ScalarProperty Name="home_number" ColumnName="home_number" />
+          <ScalarProperty Name="sort_of_sport_od" ColumnName="sort_of_sport_od" />
+          <ScalarProperty Name="tournament_end" ColumnName="tournament_end" />
+          <ScalarProperty Name="tournament_start" ColumnName="tournament_start" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="street_id" ColumnName="street_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrainingPrograms">
+      <EntityTypeMapping TypeName="SportComplexModel.TrainingPrograms">
+        <MappingFragment StoreEntitySet="TrainingPrograms">
+          <ScalarProperty Name="type_of_training_id" ColumnName="type_of_training_id" />
+          <ScalarProperty Name="sort_of_sport_id" ColumnName="sort_of_sport_id" />
+          <ScalarProperty Name="premise_id" ColumnName="premise_id" />
+          <ScalarProperty Name="staffer_id" ColumnName="staffer_id" />
+          <ScalarProperty Name="duration_in_hours" ColumnName="duration_in_hours" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transfers">
+      <EntityTypeMapping TypeName="SportComplexModel.Transfers">
+        <MappingFragment StoreEntitySet="Transfers">
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="type_of_car" ColumnName="type_of_car" />
+          <ScalarProperty Name="car_number" ColumnName="car_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Type_of_car">
+      <EntityTypeMapping TypeName="SportComplexModel.Type_of_car">
+        <MappingFragment StoreEntitySet="Type_of_car">
+          <ScalarProperty Name="type_of_car1" ColumnName="type_of_car" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypesOfSports">
+      <EntityTypeMapping TypeName="SportComplexModel.TypesOfSports">
+        <MappingFragment StoreEntitySet="TypesOfSports">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypesOfTraining">
+      <EntityTypeMapping TypeName="SportComplexModel.TypesOfTraining">
+        <MappingFragment StoreEntitySet="TypesOfTraining">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="SportComplexModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="user_password" ColumnName="user_password" />
+          <ScalarProperty Name="user_login" ColumnName="user_login" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users_images">
+      <EntityTypeMapping TypeName="SportComplexModel.Users_images">
+        <MappingFragment StoreEntitySet="Users_images">
+          <ScalarProperty Name="user_image" ColumnName="user_image" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AthletesInTheSport" TypeName="SportComplexModel.AthletesInTheSport" StoreEntitySet="AthletesInTheSport">
+      <EndProperty Name="SortsOfSports">
+        <ScalarProperty Name="id" ColumnName="sort_of_sport_id" />
+      </EndProperty>
+      <EndProperty Name="Athletes">
+        <ScalarProperty Name="id" ColumnName="athlete_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AthletesInTrainingPrograms" TypeName="SportComplexModel.AthletesInTrainingPrograms" StoreEntitySet="AthletesInTrainingPrograms">
+      <EndProperty Name="TrainingPrograms">
+        <ScalarProperty Name="id" ColumnName="program_id" />
+      </EndProperty>
+      <EndProperty Name="Athletes">
+        <ScalarProperty Name="id" ColumnName="athlete_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TeamsInTheTournament" TypeName="SportComplexModel.TeamsInTheTournament" StoreEntitySet="TeamsInTheTournament">
+      <EndProperty Name="Tournaments">
+        <ScalarProperty Name="id" ColumnName="tournament_id" />
+      </EndProperty>
+      <EndProperty Name="Teams">
+        <ScalarProperty Name="id" ColumnName="team_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

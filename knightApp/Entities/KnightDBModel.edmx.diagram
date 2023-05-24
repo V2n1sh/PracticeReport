@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="718bc3d504544ba8bfa9d5bc6853e627" Name="Diagram1">
+        <EntityTypeShape EntityType="KnightDBModel.Athletes" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.AthletesInTheTournaments" Width="1.5" PointX="8.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.Cities" Width="1.5" PointX="8.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.Discharges" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.Positions" Width="1.5" PointX="3.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.Premises" Width="1.5" PointX="9" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.Roles" Width="1.5" PointX="11.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.SortsOfSports" Width="1.5" PointX="8.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.Staff" Width="1.5" PointX="6" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.Streets" Width="1.5" PointX="8.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.Teams" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.Titles" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.Tournaments" Width="1.5" PointX="10.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.TrainingPrograms" Width="1.5" PointX="11.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.Transfers" Width="1.5" PointX="1.5" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.Type_of_car" Width="1.5" PointX="1.5" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.TypesOfSports" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.TypesOfTraining" Width="1.5" PointX="9" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.Users" Width="1.5" PointX="14" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KnightDBModel.Users_images" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <AssociationConnector Association="KnightDBModel.FK_Athletes_Discharges" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Athletes_SortsOfSports" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Athletes_Titles" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Athletes_Users_images" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Athletes_Турниры_Athletes" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Спортсмены_Команды" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Спортсмены_Турниры_Спортсмены" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Athletes_Турниры_Турниры" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Спортсмены_Турниры_Турниры" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Помещения_Города" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Турниры_Города" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Staff_Positions" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Помещения_Улицы" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Программы_тренировок_Помещения" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_виды_спорта_Типы_спорта" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Турниры_виды_спорта1" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Staff_Users_images" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Программы_тренировок_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Турниры_Улицы" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Teams_Transfers" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_TrainingPrograms_TypesOfTraining" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.FK_Transfers_Type_of_car" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.AthletesInTheSport" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.AthletesInTrainingPrograms" ManuallyRouted="false" />
+        <AssociationConnector Association="KnightDBModel.TeamsInTheTournament" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище KnightDBModelContainer" CdmEntityContainer="KnightDBEntities">
+    <EntitySetMapping Name="Athletes">
+      <EntityTypeMapping TypeName="KnightDBModel.Athletes">
+        <MappingFragment StoreEntitySet="Athletes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+          <ScalarProperty Name="discharge_id" ColumnName="discharge_id" />
+          <ScalarProperty Name="title_id" ColumnName="title_id" />
+          <ScalarProperty Name="team_id" ColumnName="team_id" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="image_id" ColumnName="image_id" />
+          <ScalarProperty Name="sortOfSport_id" ColumnName="sortOfSport_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AthletesInTheTournaments">
+      <EntityTypeMapping TypeName="KnightDBModel.AthletesInTheTournaments">
+        <MappingFragment StoreEntitySet="AthletesInTheTournaments">
+          <ScalarProperty Name="athlete_id" ColumnName="athlete_id" />
+          <ScalarProperty Name="tournament_id" ColumnName="tournament_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="KnightDBModel.Cities">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Discharges">
+      <EntityTypeMapping TypeName="KnightDBModel.Discharges">
+        <MappingFragment StoreEntitySet="Discharges">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Positions">
+      <EntityTypeMapping TypeName="KnightDBModel.Positions">
+        <MappingFragment StoreEntitySet="Positions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Premises">
+      <EntityTypeMapping TypeName="KnightDBModel.Premises">
+        <MappingFragment StoreEntitySet="Premises">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="street_id" ColumnName="street_id" />
+          <ScalarProperty Name="home_number" ColumnName="home_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="KnightDBModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SortsOfSports">
+      <EntityTypeMapping TypeName="KnightDBModel.SortsOfSports">
+        <MappingFragment StoreEntitySet="SortsOfSports">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="types_of_sport_id" ColumnName="types_of_sport_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staff">
+      <EntityTypeMapping TypeName="KnightDBModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="position_id" ColumnName="position_id" />
+          <ScalarProperty Name="image_id" ColumnName="image_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Streets">
+      <EntityTypeMapping TypeName="KnightDBModel.Streets">
+        <MappingFragment StoreEntitySet="Streets">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teams">
+      <EntityTypeMapping TypeName="KnightDBModel.Teams">
+        <MappingFragment StoreEntitySet="Teams">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="transfer_id" ColumnName="transfer_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Titles">
+      <EntityTypeMapping TypeName="KnightDBModel.Titles">
+        <MappingFragment StoreEntitySet="Titles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tournaments">
+      <EntityTypeMapping TypeName="KnightDBModel.Tournaments">
+        <MappingFragment StoreEntitySet="Tournaments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="street_id" ColumnName="street_id" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+          <ScalarProperty Name="tournament_start" ColumnName="tournament_start" />
+          <ScalarProperty Name="tournament_end" ColumnName="tournament_end" />
+          <ScalarProperty Name="sort_of_sport_od" ColumnName="sort_of_sport_od" />
+          <ScalarProperty Name="home_number" ColumnName="home_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrainingPrograms">
+      <EntityTypeMapping TypeName="KnightDBModel.TrainingPrograms">
+        <MappingFragment StoreEntitySet="TrainingPrograms">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="duration_in_hours" ColumnName="duration_in_hours" />
+          <ScalarProperty Name="staffer_id" ColumnName="staffer_id" />
+          <ScalarProperty Name="premise_id" ColumnName="premise_id" />
+          <ScalarProperty Name="sort_of_sport_id" ColumnName="sort_of_sport_id" />
+          <ScalarProperty Name="type_of_training_id" ColumnName="type_of_training_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transfers">
+      <EntityTypeMapping TypeName="KnightDBModel.Transfers">
+        <MappingFragment StoreEntitySet="Transfers">
+          <ScalarProperty Name="car_number" ColumnName="car_number" />
+          <ScalarProperty Name="type_of_car" ColumnName="type_of_car" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Type_of_car">
+      <EntityTypeMapping TypeName="KnightDBModel.Type_of_car">
+        <MappingFragment StoreEntitySet="Type_of_car">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type_of_car1" ColumnName="type_of_car" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypesOfSports">
+      <EntityTypeMapping TypeName="KnightDBModel.TypesOfSports">
+        <MappingFragment StoreEntitySet="TypesOfSports">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypesOfTraining">
+      <EntityTypeMapping TypeName="KnightDBModel.TypesOfTraining">
+        <MappingFragment StoreEntitySet="TypesOfTraining">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="KnightDBModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_login" ColumnName="user_login" />
+          <ScalarProperty Name="user_password" ColumnName="user_password" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users_images">
+      <EntityTypeMapping TypeName="KnightDBModel.Users_images">
+        <MappingFragment StoreEntitySet="Users_images">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_image" ColumnName="user_image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AthletesInTheSport" TypeName="KnightDBModel.AthletesInTheSport" StoreEntitySet="AthletesInTheSport">
+      <EndProperty Name="Athletes">
+        <ScalarProperty Name="id" ColumnName="athlete_id" />
+      </EndProperty>
+      <EndProperty Name="SortsOfSports">
+        <ScalarProperty Name="id" ColumnName="sort_of_sport_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AthletesInTrainingPrograms" TypeName="KnightDBModel.AthletesInTrainingPrograms" StoreEntitySet="AthletesInTrainingPrograms">
+      <EndProperty Name="Athletes">
+        <ScalarProperty Name="id" ColumnName="athlete_id" />
+      </EndProperty>
+      <EndProperty Name="TrainingPrograms">
+        <ScalarProperty Name="id" ColumnName="program_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TeamsInTheTournament" TypeName="KnightDBModel.TeamsInTheTournament" StoreEntitySet="TeamsInTheTournament">
+      <EndProperty Name="Teams">
+        <ScalarProperty Name="id" ColumnName="team_id" />
+      </EndProperty>
+      <EndProperty Name="Tournaments">
+        <ScalarProperty Name="id" ColumnName="tournament_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

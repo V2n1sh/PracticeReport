@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Витязь_БДModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Витязь_БДEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Витязь_БДModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Витязь_БДModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="sysdiagrams" EntityType="Витязь_БДModel.sysdiagram" />
+    <EntitySet Name="виды_спорта" EntityType="Витязь_БДModel.виды_спорта" />
+    <EntitySet Name="Города" EntityType="Витязь_БДModel.Города" />
+    <EntitySet Name="Должности" EntityType="Витязь_БДModel.Должности" />
+    <EntitySet Name="Звания" EntityType="Витязь_БДModel.Звания" />
+    <EntitySet Name="Команды" EntityType="Витязь_БДModel.Команды" />
+    <EntitySet Name="Пользователи" EntityType="Витязь_БДModel.Пользователи" />
+    <EntitySet Name="Помещения" EntityType="Витязь_БДModel.Помещения" />
+    <EntitySet Name="Программы_тренировок" EntityType="Витязь_БДModel.Программы_тренировок" />
+    <EntitySet Name="Разряды" EntityType="Витязь_БДModel.Разряды" />
+    <EntitySet Name="Роли" EntityType="Витязь_БДModel.Роли" />
+    <EntitySet Name="Сотрудники" EntityType="Витязь_БДModel.Сотрудники" />
+    <EntitySet Name="Спортсмены" EntityType="Витязь_БДModel.Спортсмены" />
+    <EntitySet Name="Типы_спорта" EntityType="Витязь_БДModel.Типы_спорта" />
+    <EntitySet Name="Типы_тренировок" EntityType="Витязь_БДModel.Типы_тренировок" />
+    <EntitySet Name="Трансферы" EntityType="Витязь_БДModel.Трансферы" />
+    <EntitySet Name="Турниры" EntityType="Витязь_БДModel.Турниры" />
+    <EntitySet Name="Улицы" EntityType="Витязь_БДModel.Улицы" />
+    <AssociationSet Name="FK_виды_спорта_Типы_спорта" Association="Витязь_БДModel.FK_виды_спорта_Типы_спорта">
+      <End Role="Типы_спорта" EntitySet="Типы_спорта" />
+      <End Role="виды_спорта" EntitySet="виды_спорта" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Турниры_виды_спорта1" Association="Витязь_БДModel.FK_Турниры_виды_спорта1">
+      <End Role="виды_спорта" EntitySet="виды_спорта" />
+      <End Role="Турниры" EntitySet="Турниры" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Помещения_Города" Association="Витязь_БДModel.FK_Помещения_Города">
+      <End Role="Города" EntitySet="Города" />
+      <End Role="Помещения" EntitySet="Помещения" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Турниры_Города" Association="Витязь_БДModel.FK_Турниры_Города">
+      <End Role="Города" EntitySet="Города" />
+      <End Role="Турниры" EntitySet="Турниры" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Сотрудники_Дожности" Association="Витязь_БДModel.FK_Сотрудники_Дожности">
+      <End Role="Должности" EntitySet="Должности" />
+      <End Role="Сотрудники" EntitySet="Сотрудники" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Спортсмены_Звания" Association="Витязь_БДModel.FK_Спортсмены_Звания">
+      <End Role="Звания" EntitySet="Звания" />
+      <End Role="Спортсмены" EntitySet="Спортсмены" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Команды_Трансферы" Association="Витязь_БДModel.FK_Команды_Трансферы">
+      <End Role="Трансферы" EntitySet="Трансферы" />
+      <End Role="Команды" EntitySet="Команды" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Спортсмены_Команды" Association="Витязь_БДModel.FK_Спортсмены_Команды">
+      <End Role="Команды" EntitySet="Команды" />
+      <End Role="Спортсмены" EntitySet="Спортсмены" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Пользователи_Роли" Association="Витязь_БДModel.FK_Пользователи_Роли">
+      <End Role="Роли" EntitySet="Роли" />
+      <End Role="Пользователи" EntitySet="Пользователи" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Помещения_Улицы" Association="Витязь_БДModel.FK_Помещения_Улицы">
+      <End Role="Улицы" EntitySet="Улицы" />
+      <End Role="Помещения" EntitySet="Помещения" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Программы_тренировок_Помещения" Association="Витязь_БДModel.FK_Программы_тренировок_Помещения">
+      <End Role="Помещения" EntitySet="Помещения" />
+      <End Role="Программы_тренировок" EntitySet="Программы_тренировок" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Программы_тренировок_Сотрудники" Association="Витязь_БДModel.FK_Программы_тренировок_Сотрудники">
+      <End Role="Сотрудники" EntitySet="Сотрудники" />
+      <End Role="Программы_тренировок" EntitySet="Программы_тренировок" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Программы_тренировок_Типы_тренировок" Association="Витязь_БДModel.FK_Программы_тренировок_Типы_тренировок">
+      <End Role="Типы_тренировок" EntitySet="Типы_тренировок" />
+      <End Role="Программы_тренировок" EntitySet="Программы_тренировок" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Спортсмены_Разряды" Association="Витязь_БДModel.FK_Спортсмены_Разряды">
+      <End Role="Разряды" EntitySet="Разряды" />
+      <End Role="Спортсмены" EntitySet="Спортсмены" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Турниры_Улицы" Association="Витязь_БДModel.FK_Турниры_Улицы">
+      <End Role="Улицы" EntitySet="Улицы" />
+      <End Role="Турниры" EntitySet="Турниры" />
+    </AssociationSet>
+    <AssociationSet Name="Команды_в_турнире" Association="Витязь_БДModel.Команды_в_турнире">
+      <End Role="Команды" EntitySet="Команды" />
+      <End Role="Турниры" EntitySet="Турниры" />
+    </AssociationSet>
+    <AssociationSet Name="Спортсмены_в_виде_спорта" Association="Витязь_БДModel.Спортсмены_в_виде_спорта">
+      <End Role="виды_спорта" EntitySet="виды_спорта" />
+      <End Role="Спортсмены" EntitySet="Спортсмены" />
+    </AssociationSet>
+    <AssociationSet Name="спортсмены_программы_тренировок" Association="Витязь_БДModel.спортсмены_программы_тренировок">
+      <End Role="Программы_тренировок" EntitySet="Программы_тренировок" />
+      <End Role="Спортсмены" EntitySet="Спортсмены" />
+    </AssociationSet>
+    <AssociationSet Name="Спортсмены_Турниры" Association="Витязь_БДModel.Спортсмены_Турниры">
+      <End Role="Спортсмены" EntitySet="Спортсмены" />
+      <End Role="Турниры" EntitySet="Турниры" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="виды_спорта">
+    <Key>
+      <PropertyRef Name="код_вида_спорта" />
+    </Key>
+    <Property Name="код_вида_спорта" Type="Int32" Nullable="false" />
+    <Property Name="код_типа_спорта" Type="Int32" Nullable="false" />
+    <Property Name="наименование" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Типы_спорта" Relationship="Витязь_БДModel.FK_виды_спорта_Типы_спорта" FromRole="виды_спорта" ToRole="Типы_спорта" />
+    <NavigationProperty Name="Турниры" Relationship="Витязь_БДModel.FK_Турниры_виды_спорта1" FromRole="виды_спорта" ToRole="Турниры" />
+    <NavigationProperty Name="Спортсмены" Relationship="Витязь_БДModel.Спортсмены_в_виде_спорта" FromRole="виды_спорта" ToRole="Спортсмены" />
+  </EntityType>
+  <EntityType Name="Города">
+    <Key>
+      <PropertyRef Name="код_города" />
+    </Key>
+    <Property Name="код_города" Type="Int32" Nullable="false" />
+    <Property Name="наименование" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Помещения" Relationship="Витязь_БДModel.FK_Помещения_Города" FromRole="Города" ToRole="Помещения" />
+    <NavigationProperty Name="Турниры" Relationship="Витязь_БДModel.FK_Турниры_Города" FromRole="Города" ToRole="Турниры" />
+  </EntityType>
+  <EntityType Name="Должности">
+    <Key>
+      <PropertyRef Name="код_должности" />
+    </Key>
+    <Property Name="код_должности" Type="Int32" Nullable="false" />
+    <Property Name="наименование" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Сотрудники" Relationship="Витязь_БДModel.FK_Сотрудники_Дожности" FromRole="Должности" ToRole="Сотрудники" />
+  </EntityType>
+  <EntityType Name="Звания">
+    <Key>
+      <PropertyRef Name="код_звания" />
+    </Key>
+    <Property Name="код_звания" Type="Int32" Nullable="false" />
+    <Property Name="наименование" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Спортсмены" Relationship="Витязь_БДModel.FK_Спортсмены_Звания" FromRole="Звания" ToRole="Спортсмены" />
+  </EntityType>
+  <EntityType Name="Команды">
+    <Key>
+      <PropertyRef Name="код_команды" />
+    </Key>
+    <Property Name="код_команды" Type="Int32" Nullable="false" />
+    <Property Name="название" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="номер_трансфера" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Трансферы" Relationship="Витязь_БДModel.FK_Команды_Трансферы" FromRole="Команды" ToRole="Трансферы" />
+    <NavigationProperty Name="Спортсмены" Relationship="Витязь_БДModel.FK_Спортсмены_Команды" FromRole="Команды" ToRole="Спортсмены" />
+    <NavigationProperty Name="Турниры" Relationship="Витязь_БДModel.Команды_в_турнире" FromRole="Команды" ToRole="Турниры" />
+  </EntityType>
+  <EntityType Name="Пользователи">
+    <Key>
+      <PropertyRef Name="код" />
+    </Key>
+    <Property Name="код" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="логин" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="пароль" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="код_роли" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Роли" Relationship="Витязь_БДModel.FK_Пользователи_Роли" FromRole="Пользователи" ToRole="Роли" />
+  </EntityType>
+  <EntityType Name="Помещения">
+    <Key>
+      <PropertyRef Name="код_помещения" />
+    </Key>
+    <Property Name="код_помещения" Type="Int32" Nullable="false" />
+    <Property Name="наименование" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="код_города" Type="Int32" />
+    <Property Name="код_улицы" Type="Int32" />
+    <Property Name="номер_дома" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Города" Relationship="Витязь_БДModel.FK_Помещения_Города" FromRole="Помещения" ToRole="Города" />
+    <NavigationProperty Name="Улицы" Relationship="Витязь_БДModel.FK_Помещения_Улицы" FromRole="Помещения" ToRole="Улицы" />
+    <NavigationProperty Name="Программы_тренировок" Relationship="Витязь_БДModel.FK_Программы_тренировок_Помещения" FromRole="Помещения" ToRole="Программы_тренировок" />
+  </EntityType>
+  <EntityType Name="Программы_тренировок">
+    <Key>
+      <PropertyRef Name="код_программы" />
+    </Key>
+    <Property Name="код_программы" Type="Int32" Nullable="false" />
+    <Property Name="длительность_в_часах" Type="Double" Nullable="false" />
+    <Property Name="код_сотрудника" Type="Int32" />
+    <Property Name="код_помещения" Type="Int32" />
+    <Property Name="код_вида_спорта" Type="Int32" />
+    <Property Name="код_типа_тренировки" Type="Int32" />
+    <NavigationProperty Name="Помещения" Relationship="Витязь_БДModel.FK_Программы_тренировок_Помещения" FromRole="Программы_тренировок" ToRole="Помещения" />
+    <NavigationProperty Name="Сотрудники" Relationship="Витязь_БДModel.FK_Программы_тренировок_Сотрудники" FromRole="Программы_тренировок" ToRole="Сотрудники" />
+    <NavigationProperty Name="Типы_тренировок" Relationship="Витязь_БДModel.FK_Программы_тренировок_Типы_тренировок" FromRole="Программы_тренировок" ToRole="Типы_тренировок" />
+    <NavigationProperty Name="Спортсмены" Relationship="Витязь_БДModel.спортсмены_программы_тренировок" FromRole="Программы_тренировок" ToRole="Спортсмены" />
+  </EntityType>
+  <EntityType Name="Разряды">
+    <Key>
+      <PropertyRef Name="код_разряда" />
+    </Key>
+    <Property Name="код_разряда" Type="Int32" Nullable="false" />
+    <Property Name="наименование" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Спортсмены" Relationship="Витязь_БДModel.FK_Спортсмены_Разряды" FromRole="Разряды" ToRole="Спортсмены" />
+  </EntityType>
+  <EntityType Name="Роли">
+    <Key>
+      <PropertyRef Name="код" />
+    </Key>
+    <Property Name="код" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="название" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Пользователи" Relationship="Витязь_БДModel.FK_Пользователи_Роли" FromRole="Роли" ToRole="Пользователи" />
+  </EntityType>
+  <EntityType Name="Сотрудники">
+    <Key>
+      <PropertyRef Name="код_сотрудника" />
+    </Key>
+    <Property Name="код_сотрудника" Type="Int32" Nullable="false" />
+    <Property Name="фамилия" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="имя" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="отчество" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="номер_телефона" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="код_должности" Type="Int32" />
+    <NavigationProperty Name="Должности" Relationship="Витязь_БДModel.FK_Сотрудники_Дожности" FromRole="Сотрудники" ToRole="Должности" />
+    <NavigationProperty Name="Программы_тренировок" Relationship="Витязь_БДModel.FK_Программы_тренировок_Сотрудники" FromRole="Сотрудники" ToRole="Программы_тренировок" />
+  </EntityType>
+  <EntityType Name="Спортсмены">
+    <Key>
+      <PropertyRef Name="код_спортсмена" />
+    </Key>
+    <Property Name="код_спортсмена" Type="Int32" Nullable="false" />
+    <Property Name="фамилия" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="имя" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="отчество" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="код_разряда" Type="Int32" />
+    <Property Name="код_звания" Type="Int32" />
+    <Property Name="код_команды" Type="Int32" />
+    <Property Name="дата_рождения" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Звания" Relationship="Витязь_БДModel.FK_Спортсмены_Звания" FromRole="Спортсмены" ToRole="Звания" />
+    <NavigationProperty Name="Команды" Relationship="Витязь_БДModel.FK_Спортсмены_Команды" FromRole="Спортсмены" ToRole="Команды" />
+    <NavigationProperty Name="Разряды" Relationship="Витязь_БДModel.FK_Спортсмены_Разряды" FromRole="Спортсмены" ToRole="Разряды" />
+    <NavigationProperty Name="виды_спорта" Relationship="Витязь_БДModel.Спортсмены_в_виде_спорта" FromRole="Спортсмены" ToRole="виды_спорта" />
+    <NavigationProperty Name="Программы_тренировок" Relationship="Витязь_БДModel.спортсмены_программы_тренировок" FromRole="Спортсмены" ToRole="Программы_тренировок" />
+    <NavigationProperty Name="Турниры" Relationship="Витязь_БДModel.Спортсмены_Турниры" FromRole="Спортсмены" ToRole="Турниры" />
+  </EntityType>
+  <EntityType Name="Типы_спорта">
+    <Key>
+      <PropertyRef Name="код_типа_спорта" />
+    </Key>
+    <Property Name="код_типа_спорта" Type="Int32" Nullable="false" />
+    <Property Name="тип" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="виды_спорта" Relationship="Витязь_БДModel.FK_виды_спорта_Типы_спорта" FromRole="Типы_спорта" ToRole="виды_спорта" />
+  </EntityType>
+  <EntityType Name="Типы_тренировок">
+    <Key>
+      <PropertyRef Name="код_типа_тренировки" />
+    </Key>
+    <Property Name="код_типа_тренировки" Type="Int32" Nullable="false" />
+    <Property Name="тип_тренировки" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Программы_тренировок" Relationship="Витязь_БДModel.FK_Программы_тренировок_Типы_тренировок" FromRole="Типы_тренировок" ToRole="Программы_тренировок" />
+  </EntityType>
+  <EntityType Name="Трансферы">
+    <Key>
+      <PropertyRef Name="автомобильный_номер" />
+    </Key>
+    <Property Name="автомобильный_номер" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="тип_автомобиля" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="марка" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Команды" Relationship="Витязь_БДModel.FK_Команды_Трансферы" FromRole="Трансферы" ToRole="Команды" />
+  </EntityType>
+  <EntityType Name="Турниры">
+    <Key>
+      <PropertyRef Name="код_турнира" />
+    </Key>
+    <Property Name="код_турнира" Type="Int32" Nullable="false" />
+    <Property Name="наименование" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="код_улицы" Type="Int32" />
+    <Property Name="код_города" Type="Int32" />
+    <Property Name="начало_турнира" Type="DateTime" Precision="0" />
+    <Property Name="конец_турнира" Type="DateTime" Precision="0" />
+    <Property Name="код_вида_спорта" Type="Int32" />
+    <Property Name="номер_дома" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="виды_спорта" Relationship="Витязь_БДModel.FK_Турниры_виды_спорта1" FromRole="Турниры" ToRole="виды_спорта" />
+    <NavigationProperty Name="Города" Relationship="Витязь_БДModel.FK_Турниры_Города" FromRole="Турниры" ToRole="Города" />
+    <NavigationProperty Name="Улицы" Relationship="Витязь_БДModel.FK_Турниры_Улицы" FromRole="Турниры" ToRole="Улицы" />
+    <NavigationProperty Name="Команды" Relationship="Витязь_БДModel.Команды_в_турнире" FromRole="Турниры" ToRole="Команды" />
+    <NavigationProperty Name="Спортсмены" Relationship="Витязь_БДModel.Спортсмены_Турниры" FromRole="Турниры" ToRole="Спортсмены" />
+  </EntityType>
+  <EntityType Name="Улицы">
+    <Key>
+      <PropertyRef Name="код_улицы" />
+    </Key>
+    <Property Name="код_улицы" Type="Int32" Nullable="false" />
+    <Property Name="наименование" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Помещения" Relationship="Витязь_БДModel.FK_Помещения_Улицы" FromRole="Улицы" ToRole="Помещения" />
+    <NavigationProperty Name="Турниры" Relationship="Витязь_БДModel.FK_Турниры_Улицы" FromRole="Улицы" ToRole="Турниры" />
+  </EntityType>
+  <Association Name="FK_виды_спорта_Типы_спорта">
+    <End Type="Витязь_БДModel.Типы_спорта" Role="Типы_спорта" Multiplicity="1" />
+    <End Type="Витязь_БДModel.виды_спорта" Role="виды_спорта" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Типы_спорта">
+        <PropertyRef Name="код_типа_спорта" />
+      </Principal>
+      <Dependent Role="виды_спорта">
+        <PropertyRef Name="код_типа_спорта" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Турниры_виды_спорта1">
+    <End Type="Витязь_БДModel.виды_спорта" Role="виды_спорта" Multiplicity="0..1" />
+    <End Type="Витязь_БДModel.Турниры" Role="Турниры" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="виды_спорта">
+        <PropertyRef Name="код_вида_спорта" />
+      </Principal>
+      <Dependent Role="Турниры">
+        <PropertyRef Name="код_вида_спорта" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Помещения_Города">
+    <End Type="Витязь_БДModel.Города" Role="Города" Multiplicity="0..1" />
+    <End Type="Витязь_БДModel.Помещения" Role="Помещения" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Города">
+        <PropertyRef Name="код_города" />
+      </Principal>
+      <Dependent Role="Помещения">
+        <PropertyRef Name="код_города" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Турниры_Города">
+    <End Type="Витязь_БДModel.Города" Role="Города" Multiplicity="0..1" />
+    <End Type="Витязь_БДModel.Турниры" Role="Турниры" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Города">
+        <PropertyRef Name="код_города" />
+      </Principal>
+      <Dependent Role="Турниры">
+        <PropertyRef Name="код_города" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Сотрудники_Дожности">
+    <End Type="Витязь_БДModel.Должности" Role="Должности" Multiplicity="0..1" />
+    <End Type="Витязь_БДModel.Сотрудники" Role="Сотрудники" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Должности">
+        <PropertyRef Name="код_должности" />
+      </Principal>
+      <Dependent Role="Сотрудники">
+        <PropertyRef Name="код_должности" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Спортсмены_Звания">
+    <End Type="Витязь_БДModel.Звания" Role="Звания" Multiplicity="0..1" />
+    <End Type="Витязь_БДModel.Спортсмены" Role="Спортсмены" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Звания">
+        <PropertyRef Name="код_звания" />
+      </Principal>
+      <Dependent Role="Спортсмены">
+        <PropertyRef Name="код_звания" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Команды_Трансферы">
+    <End Type="Витязь_БДModel.Трансферы" Role="Трансферы" Multiplicity="1" />
+    <End Type="Витязь_БДModel.Команды" Role="Команды" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Трансферы">
+        <PropertyRef Name="автомобильный_номер" />
+      </Principal>
+      <Dependent Role="Команды">
+        <PropertyRef Name="номер_трансфера" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Спортсмены_Команды">
+    <End Type="Витязь_БДModel.Команды" Role="Команды" Multiplicity="0..1" />
+    <End Type="Витязь_БДModel.Спортсмены" Role="Спортсмены" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Команды">
+        <PropertyRef Name="код_команды" />
+      </Principal>
+      <Dependent Role="Спортсмены">
+        <PropertyRef Name="код_команды" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Пользователи_Роли">
+    <End Type="Витязь_БДModel.Роли" Role="Роли" Multiplicity="1" />
+    <End Type="Витязь_БДModel.Пользователи" Role="Пользователи" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Роли">
+        <PropertyRef Name="код" />
+      </Principal>
+      <Dependent Role="Пользователи">
+        <PropertyRef Name="код_роли" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Помещения_Улицы">
+    <End Type="Витязь_БДModel.Улицы" Role="Улицы" Multiplicity="0..1" />
+    <End Type="Витязь_БДModel.Помещения" Role="Помещения" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Улицы">
+        <PropertyRef Name="код_улицы" />
+      </Principal>
+      <Dependent Role="Помещения">
+        <PropertyRef Name="код_улицы" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Программы_тренировок_Помещения">
+    <End Type="Витязь_БДModel.Помещения" Role="Помещения" Multiplicity="0..1" />
+    <End Type="Витязь_БДModel.Программы_тренировок" Role="Программы_тренировок" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Помещения">
+        <PropertyRef Name="код_помещения" />
+      </Principal>
+      <Dependent Role="Программы_тренировок">
+        <PropertyRef Name="код_помещения" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Программы_тренировок_Сотрудники">
+    <End Type="Витязь_БДModel.Сотрудники" Role="Сотрудники" Multiplicity="0..1" />
+    <End Type="Витязь_БДModel.Программы_тренировок" Role="Программы_тренировок" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Сотрудники">
+        <PropertyRef Name="код_сотрудника" />
+      </Principal>
+      <Dependent Role="Программы_тренировок">
+        <PropertyRef Name="код_сотрудника" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Программы_тренировок_Типы_тренировок">
+    <End Type="Витязь_БДModel.Типы_тренировок" Role="Типы_тренировок" Multiplicity="0..1" />
+    <End Type="Витязь_БДModel.Программы_тренировок" Role="Программы_тренировок" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Типы_тренировок">
+        <PropertyRef Name="код_типа_тренировки" />
+      </Principal>
+      <Dependent Role="Программы_тренировок">
+        <PropertyRef Name="код_типа_тренировки" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Спортсмены_Разряды">
+    <End Type="Витязь_БДModel.Разряды" Role="Разряды" Multiplicity="0..1" />
+    <End Type="Витязь_БДModel.Спортсмены" Role="Спортсмены" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Разряды">
+        <PropertyRef Name="код_разряда" />
+      </Principal>
+      <Dependent Role="Спортсмены">
+        <PropertyRef Name="код_разряда" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Турниры_Улицы">
+    <End Type="Витязь_БДModel.Улицы" Role="Улицы" Multiplicity="0..1" />
+    <End Type="Витязь_БДModel.Турниры" Role="Турниры" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Улицы">
+        <PropertyRef Name="код_улицы" />
+      </Principal>
+      <Dependent Role="Турниры">
+        <PropertyRef Name="код_улицы" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Команды_в_турнире">
+    <End Type="Витязь_БДModel.Команды" Role="Команды" Multiplicity="*" />
+    <End Type="Витязь_БДModel.Турниры" Role="Турниры" Multiplicity="*" />
+  </Association>
+  <Association Name="Спортсмены_в_виде_спорта">
+    <End Type="Витязь_БДModel.виды_спорта" Role="виды_спорта" Multiplicity="*" />
+    <End Type="Витязь_БДModel.Спортсмены" Role="Спортсмены" Multiplicity="*" />
+  </Association>
+  <Association Name="спортсмены_программы_тренировок">
+    <End Type="Витязь_БДModel.Программы_тренировок" Role="Программы_тренировок" Multiplicity="*" />
+    <End Type="Витязь_БДModel.Спортсмены" Role="Спортсмены" Multiplicity="*" />
+  </Association>
+  <Association Name="Спортсмены_Турниры">
+    <End Type="Витязь_БДModel.Спортсмены" Role="Спортсмены" Multiplicity="*" />
+    <End Type="Витязь_БДModel.Турниры" Role="Турниры" Multiplicity="*" />
+  </Association>
+</Schema>

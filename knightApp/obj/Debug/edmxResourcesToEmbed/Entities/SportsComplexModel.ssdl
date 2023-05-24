@@ -1,0 +1,615 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Витязь_БДModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="виды_спорта">
+    <Key>
+      <PropertyRef Name="код_вида_спорта" />
+    </Key>
+    <Property Name="код_вида_спорта" Type="int" Nullable="false" />
+    <Property Name="код_типа_спорта" Type="int" Nullable="false" />
+    <Property Name="наименование" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Города">
+    <Key>
+      <PropertyRef Name="код_города" />
+    </Key>
+    <Property Name="код_города" Type="int" Nullable="false" />
+    <Property Name="наименование" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Должности">
+    <Key>
+      <PropertyRef Name="код_должности" />
+    </Key>
+    <Property Name="код_должности" Type="int" Nullable="false" />
+    <Property Name="наименование" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Звания">
+    <Key>
+      <PropertyRef Name="код_звания" />
+    </Key>
+    <Property Name="код_звания" Type="int" Nullable="false" />
+    <Property Name="наименование" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Команды">
+    <Key>
+      <PropertyRef Name="код_команды" />
+    </Key>
+    <Property Name="код_команды" Type="int" Nullable="false" />
+    <Property Name="название" Type="nvarchar" MaxLength="255" />
+    <Property Name="номер_трансфера" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Команды_в_турнире">
+    <Key>
+      <PropertyRef Name="код_команды" />
+      <PropertyRef Name="код_турнира" />
+    </Key>
+    <Property Name="код_команды" Type="int" Nullable="false" />
+    <Property Name="код_турнира" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Пользователи">
+    <Key>
+      <PropertyRef Name="код" />
+    </Key>
+    <Property Name="код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="логин" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="пароль" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="код_роли" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Помещения">
+    <Key>
+      <PropertyRef Name="код_помещения" />
+    </Key>
+    <Property Name="код_помещения" Type="int" Nullable="false" />
+    <Property Name="наименование" Type="nvarchar" MaxLength="255" />
+    <Property Name="код_города" Type="int" />
+    <Property Name="код_улицы" Type="int" />
+    <Property Name="номер_дома" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Программы_тренировок">
+    <Key>
+      <PropertyRef Name="код_программы" />
+    </Key>
+    <Property Name="код_программы" Type="int" Nullable="false" />
+    <Property Name="длительность_в_часах" Type="float" Nullable="false" />
+    <Property Name="код_сотрудника" Type="int" />
+    <Property Name="код_помещения" Type="int" />
+    <Property Name="код_вида_спорта" Type="int" />
+    <Property Name="код_типа_тренировки" Type="int" />
+  </EntityType>
+  <EntityType Name="Разряды">
+    <Key>
+      <PropertyRef Name="код_разряда" />
+    </Key>
+    <Property Name="код_разряда" Type="int" Nullable="false" />
+    <Property Name="наименование" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Роли">
+    <Key>
+      <PropertyRef Name="код" />
+    </Key>
+    <Property Name="код" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="название" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Сотрудники">
+    <Key>
+      <PropertyRef Name="код_сотрудника" />
+    </Key>
+    <Property Name="код_сотрудника" Type="int" Nullable="false" />
+    <Property Name="фамилия" Type="nvarchar" MaxLength="255" />
+    <Property Name="имя" Type="nvarchar" MaxLength="255" />
+    <Property Name="отчество" Type="nvarchar" MaxLength="255" />
+    <Property Name="номер_телефона" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="код_должности" Type="int" />
+  </EntityType>
+  <EntityType Name="Спортсмены">
+    <Key>
+      <PropertyRef Name="код_спортсмена" />
+    </Key>
+    <Property Name="код_спортсмена" Type="int" Nullable="false" />
+    <Property Name="фамилия" Type="nvarchar" MaxLength="255" />
+    <Property Name="имя" Type="nvarchar" MaxLength="255" />
+    <Property Name="отчество" Type="nvarchar" MaxLength="255" />
+    <Property Name="код_разряда" Type="int" />
+    <Property Name="код_звания" Type="int" />
+    <Property Name="код_команды" Type="int" />
+    <Property Name="дата_рождения" Type="date" />
+  </EntityType>
+  <EntityType Name="Спортсмены_в_виде_спорта">
+    <Key>
+      <PropertyRef Name="код_спортсмена" />
+      <PropertyRef Name="код_вида_спорта" />
+    </Key>
+    <Property Name="код_спортсмена" Type="int" Nullable="false" />
+    <Property Name="код_вида_спорта" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="спортсмены_программы_тренировок">
+    <Key>
+      <PropertyRef Name="код_спортсмена" />
+      <PropertyRef Name="код_программы" />
+    </Key>
+    <Property Name="код_спортсмена" Type="int" Nullable="false" />
+    <Property Name="код_программы" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Спортсмены_Турниры">
+    <Key>
+      <PropertyRef Name="код_спортсмена" />
+      <PropertyRef Name="код_турнира" />
+    </Key>
+    <Property Name="код_спортсмена" Type="int" Nullable="false" />
+    <Property Name="код_турнира" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Типы_спорта">
+    <Key>
+      <PropertyRef Name="код_типа_спорта" />
+    </Key>
+    <Property Name="код_типа_спорта" Type="int" Nullable="false" />
+    <Property Name="тип" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Типы_тренировок">
+    <Key>
+      <PropertyRef Name="код_типа_тренировки" />
+    </Key>
+    <Property Name="код_типа_тренировки" Type="int" Nullable="false" />
+    <Property Name="тип_тренировки" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Трансферы">
+    <Key>
+      <PropertyRef Name="автомобильный_номер" />
+    </Key>
+    <Property Name="автомобильный_номер" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="тип_автомобиля" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="марка" Type="nchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Турниры">
+    <Key>
+      <PropertyRef Name="код_турнира" />
+    </Key>
+    <Property Name="код_турнира" Type="int" Nullable="false" />
+    <Property Name="наименование" Type="nvarchar" MaxLength="255" />
+    <Property Name="код_улицы" Type="int" />
+    <Property Name="код_города" Type="int" />
+    <Property Name="начало_турнира" Type="date" />
+    <Property Name="конец_турнира" Type="date" />
+    <Property Name="код_вида_спорта" Type="int" />
+    <Property Name="номер_дома" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Улицы">
+    <Key>
+      <PropertyRef Name="код_улицы" />
+    </Key>
+    <Property Name="код_улицы" Type="int" Nullable="false" />
+    <Property Name="наименование" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK_виды_спорта_Типы_спорта">
+    <End Role="Типы_спорта" Type="Self.Типы_спорта" Multiplicity="1" />
+    <End Role="виды_спорта" Type="Self.виды_спорта" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Типы_спорта">
+        <PropertyRef Name="код_типа_спорта" />
+      </Principal>
+      <Dependent Role="виды_спорта">
+        <PropertyRef Name="код_типа_спорта" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Команды_в_турнире_Команды">
+    <End Role="Команды" Type="Self.Команды" Multiplicity="1" />
+    <End Role="Команды_в_турнире" Type="Self.Команды_в_турнире" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Команды">
+        <PropertyRef Name="код_команды" />
+      </Principal>
+      <Dependent Role="Команды_в_турнире">
+        <PropertyRef Name="код_команды" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Команды_в_турнире_Турниры">
+    <End Role="Турниры" Type="Self.Турниры" Multiplicity="1" />
+    <End Role="Команды_в_турнире" Type="Self.Команды_в_турнире" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Турниры">
+        <PropertyRef Name="код_турнира" />
+      </Principal>
+      <Dependent Role="Команды_в_турнире">
+        <PropertyRef Name="код_турнира" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Команды_Трансферы">
+    <End Role="Трансферы" Type="Self.Трансферы" Multiplicity="1" />
+    <End Role="Команды" Type="Self.Команды" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Трансферы">
+        <PropertyRef Name="автомобильный_номер" />
+      </Principal>
+      <Dependent Role="Команды">
+        <PropertyRef Name="номер_трансфера" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Пользователи_Роли">
+    <End Role="Роли" Type="Self.Роли" Multiplicity="1" />
+    <End Role="Пользователи" Type="Self.Пользователи" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Роли">
+        <PropertyRef Name="код" />
+      </Principal>
+      <Dependent Role="Пользователи">
+        <PropertyRef Name="код_роли" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Помещения_Города">
+    <End Role="Города" Type="Self.Города" Multiplicity="0..1" />
+    <End Role="Помещения" Type="Self.Помещения" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Города">
+        <PropertyRef Name="код_города" />
+      </Principal>
+      <Dependent Role="Помещения">
+        <PropertyRef Name="код_города" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Помещения_Улицы">
+    <End Role="Улицы" Type="Self.Улицы" Multiplicity="0..1" />
+    <End Role="Помещения" Type="Self.Помещения" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Улицы">
+        <PropertyRef Name="код_улицы" />
+      </Principal>
+      <Dependent Role="Помещения">
+        <PropertyRef Name="код_улицы" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Программы_тренировок_Помещения">
+    <End Role="Помещения" Type="Self.Помещения" Multiplicity="0..1" />
+    <End Role="Программы_тренировок" Type="Self.Программы_тренировок" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Помещения">
+        <PropertyRef Name="код_помещения" />
+      </Principal>
+      <Dependent Role="Программы_тренировок">
+        <PropertyRef Name="код_помещения" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Программы_тренировок_Сотрудники">
+    <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="0..1" />
+    <End Role="Программы_тренировок" Type="Self.Программы_тренировок" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Сотрудники">
+        <PropertyRef Name="код_сотрудника" />
+      </Principal>
+      <Dependent Role="Программы_тренировок">
+        <PropertyRef Name="код_сотрудника" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Программы_тренировок_Типы_тренировок">
+    <End Role="Типы_тренировок" Type="Self.Типы_тренировок" Multiplicity="0..1" />
+    <End Role="Программы_тренировок" Type="Self.Программы_тренировок" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Типы_тренировок">
+        <PropertyRef Name="код_типа_тренировки" />
+      </Principal>
+      <Dependent Role="Программы_тренировок">
+        <PropertyRef Name="код_типа_тренировки" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Сотрудники_Дожности">
+    <End Role="Должности" Type="Self.Должности" Multiplicity="0..1" />
+    <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Должности">
+        <PropertyRef Name="код_должности" />
+      </Principal>
+      <Dependent Role="Сотрудники">
+        <PropertyRef Name="код_должности" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Спортсмены_в_виде_спорта_виды_спорта">
+    <End Role="виды_спорта" Type="Self.виды_спорта" Multiplicity="1" />
+    <End Role="Спортсмены_в_виде_спорта" Type="Self.Спортсмены_в_виде_спорта" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="виды_спорта">
+        <PropertyRef Name="код_вида_спорта" />
+      </Principal>
+      <Dependent Role="Спортсмены_в_виде_спорта">
+        <PropertyRef Name="код_вида_спорта" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Спортсмены_в_виде_спорта_Спортсмены">
+    <End Role="Спортсмены" Type="Self.Спортсмены" Multiplicity="1" />
+    <End Role="Спортсмены_в_виде_спорта" Type="Self.Спортсмены_в_виде_спорта" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Спортсмены">
+        <PropertyRef Name="код_спортсмена" />
+      </Principal>
+      <Dependent Role="Спортсмены_в_виде_спорта">
+        <PropertyRef Name="код_спортсмена" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Спортсмены_Звания">
+    <End Role="Звания" Type="Self.Звания" Multiplicity="0..1" />
+    <End Role="Спортсмены" Type="Self.Спортсмены" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Звания">
+        <PropertyRef Name="код_звания" />
+      </Principal>
+      <Dependent Role="Спортсмены">
+        <PropertyRef Name="код_звания" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Спортсмены_Команды">
+    <End Role="Команды" Type="Self.Команды" Multiplicity="0..1" />
+    <End Role="Спортсмены" Type="Self.Спортсмены" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Команды">
+        <PropertyRef Name="код_команды" />
+      </Principal>
+      <Dependent Role="Спортсмены">
+        <PropertyRef Name="код_команды" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_спортсмены_программы_тренировок_Программы_тренировок">
+    <End Role="Программы_тренировок" Type="Self.Программы_тренировок" Multiplicity="1" />
+    <End Role="спортсмены_программы_тренировок" Type="Self.спортсмены_программы_тренировок" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Программы_тренировок">
+        <PropertyRef Name="код_программы" />
+      </Principal>
+      <Dependent Role="спортсмены_программы_тренировок">
+        <PropertyRef Name="код_программы" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_спортсмены_программы_тренировок_Спортсмены">
+    <End Role="Спортсмены" Type="Self.Спортсмены" Multiplicity="1" />
+    <End Role="спортсмены_программы_тренировок" Type="Self.спортсмены_программы_тренировок" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Спортсмены">
+        <PropertyRef Name="код_спортсмена" />
+      </Principal>
+      <Dependent Role="спортсмены_программы_тренировок">
+        <PropertyRef Name="код_спортсмена" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Спортсмены_Разряды">
+    <End Role="Разряды" Type="Self.Разряды" Multiplicity="0..1" />
+    <End Role="Спортсмены" Type="Self.Спортсмены" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Разряды">
+        <PropertyRef Name="код_разряда" />
+      </Principal>
+      <Dependent Role="Спортсмены">
+        <PropertyRef Name="код_разряда" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Спортсмены_Турниры_Спортсмены">
+    <End Role="Спортсмены" Type="Self.Спортсмены" Multiplicity="1" />
+    <End Role="Спортсмены_Турниры" Type="Self.Спортсмены_Турниры" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Спортсмены">
+        <PropertyRef Name="код_спортсмена" />
+      </Principal>
+      <Dependent Role="Спортсмены_Турниры">
+        <PropertyRef Name="код_спортсмена" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Спортсмены_Турниры_Турниры">
+    <End Role="Турниры" Type="Self.Турниры" Multiplicity="1" />
+    <End Role="Спортсмены_Турниры" Type="Self.Спортсмены_Турниры" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Турниры">
+        <PropertyRef Name="код_турнира" />
+      </Principal>
+      <Dependent Role="Спортсмены_Турниры">
+        <PropertyRef Name="код_турнира" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Турниры_виды_спорта1">
+    <End Role="виды_спорта" Type="Self.виды_спорта" Multiplicity="0..1" />
+    <End Role="Турниры" Type="Self.Турниры" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="виды_спорта">
+        <PropertyRef Name="код_вида_спорта" />
+      </Principal>
+      <Dependent Role="Турниры">
+        <PropertyRef Name="код_вида_спорта" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Турниры_Города">
+    <End Role="Города" Type="Self.Города" Multiplicity="0..1" />
+    <End Role="Турниры" Type="Self.Турниры" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Города">
+        <PropertyRef Name="код_города" />
+      </Principal>
+      <Dependent Role="Турниры">
+        <PropertyRef Name="код_города" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Турниры_Улицы">
+    <End Role="Улицы" Type="Self.Улицы" Multiplicity="0..1" />
+    <End Role="Турниры" Type="Self.Турниры" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Улицы">
+        <PropertyRef Name="код_улицы" />
+      </Principal>
+      <Dependent Role="Турниры">
+        <PropertyRef Name="код_улицы" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="Хранилище Витязь_БДModelContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="виды_спорта" EntityType="Self.виды_спорта" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Города" EntityType="Self.Города" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Должности" EntityType="Self.Должности" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Звания" EntityType="Self.Звания" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Команды" EntityType="Self.Команды" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Команды_в_турнире" EntityType="Self.Команды_в_турнире" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Пользователи" EntityType="Self.Пользователи" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Помещения" EntityType="Self.Помещения" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Программы_тренировок" EntityType="Self.Программы_тренировок" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Разряды" EntityType="Self.Разряды" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Роли" EntityType="Self.Роли" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Сотрудники" EntityType="Self.Сотрудники" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Спортсмены" EntityType="Self.Спортсмены" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Спортсмены_в_виде_спорта" EntityType="Self.Спортсмены_в_виде_спорта" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="спортсмены_программы_тренировок" EntityType="Self.спортсмены_программы_тренировок" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Спортсмены_Турниры" EntityType="Self.Спортсмены_Турниры" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Типы_спорта" EntityType="Self.Типы_спорта" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Типы_тренировок" EntityType="Self.Типы_тренировок" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Трансферы" EntityType="Self.Трансферы" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Турниры" EntityType="Self.Турниры" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Улицы" EntityType="Self.Улицы" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_виды_спорта_Типы_спорта" Association="Self.FK_виды_спорта_Типы_спорта">
+      <End Role="Типы_спорта" EntitySet="Типы_спорта" />
+      <End Role="виды_спорта" EntitySet="виды_спорта" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Команды_в_турнире_Команды" Association="Self.FK_Команды_в_турнире_Команды">
+      <End Role="Команды" EntitySet="Команды" />
+      <End Role="Команды_в_турнире" EntitySet="Команды_в_турнире" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Команды_в_турнире_Турниры" Association="Self.FK_Команды_в_турнире_Турниры">
+      <End Role="Турниры" EntitySet="Турниры" />
+      <End Role="Команды_в_турнире" EntitySet="Команды_в_турнире" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Команды_Трансферы" Association="Self.FK_Команды_Трансферы">
+      <End Role="Трансферы" EntitySet="Трансферы" />
+      <End Role="Команды" EntitySet="Команды" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Пользователи_Роли" Association="Self.FK_Пользователи_Роли">
+      <End Role="Роли" EntitySet="Роли" />
+      <End Role="Пользователи" EntitySet="Пользователи" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Помещения_Города" Association="Self.FK_Помещения_Города">
+      <End Role="Города" EntitySet="Города" />
+      <End Role="Помещения" EntitySet="Помещения" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Помещения_Улицы" Association="Self.FK_Помещения_Улицы">
+      <End Role="Улицы" EntitySet="Улицы" />
+      <End Role="Помещения" EntitySet="Помещения" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Программы_тренировок_Помещения" Association="Self.FK_Программы_тренировок_Помещения">
+      <End Role="Помещения" EntitySet="Помещения" />
+      <End Role="Программы_тренировок" EntitySet="Программы_тренировок" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Программы_тренировок_Сотрудники" Association="Self.FK_Программы_тренировок_Сотрудники">
+      <End Role="Сотрудники" EntitySet="Сотрудники" />
+      <End Role="Программы_тренировок" EntitySet="Программы_тренировок" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Программы_тренировок_Типы_тренировок" Association="Self.FK_Программы_тренировок_Типы_тренировок">
+      <End Role="Типы_тренировок" EntitySet="Типы_тренировок" />
+      <End Role="Программы_тренировок" EntitySet="Программы_тренировок" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Сотрудники_Дожности" Association="Self.FK_Сотрудники_Дожности">
+      <End Role="Должности" EntitySet="Должности" />
+      <End Role="Сотрудники" EntitySet="Сотрудники" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Спортсмены_в_виде_спорта_виды_спорта" Association="Self.FK_Спортсмены_в_виде_спорта_виды_спорта">
+      <End Role="виды_спорта" EntitySet="виды_спорта" />
+      <End Role="Спортсмены_в_виде_спорта" EntitySet="Спортсмены_в_виде_спорта" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Спортсмены_в_виде_спорта_Спортсмены" Association="Self.FK_Спортсмены_в_виде_спорта_Спортсмены">
+      <End Role="Спортсмены" EntitySet="Спортсмены" />
+      <End Role="Спортсмены_в_виде_спорта" EntitySet="Спортсмены_в_виде_спорта" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Спортсмены_Звания" Association="Self.FK_Спортсмены_Звания">
+      <End Role="Звания" EntitySet="Звания" />
+      <End Role="Спортсмены" EntitySet="Спортсмены" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Спортсмены_Команды" Association="Self.FK_Спортсмены_Команды">
+      <End Role="Команды" EntitySet="Команды" />
+      <End Role="Спортсмены" EntitySet="Спортсмены" />
+    </AssociationSet>
+    <AssociationSet Name="FK_спортсмены_программы_тренировок_Программы_тренировок" Association="Self.FK_спортсмены_программы_тренировок_Программы_тренировок">
+      <End Role="Программы_тренировок" EntitySet="Программы_тренировок" />
+      <End Role="спортсмены_программы_тренировок" EntitySet="спортсмены_программы_тренировок" />
+    </AssociationSet>
+    <AssociationSet Name="FK_спортсмены_программы_тренировок_Спортсмены" Association="Self.FK_спортсмены_программы_тренировок_Спортсмены">
+      <End Role="Спортсмены" EntitySet="Спортсмены" />
+      <End Role="спортсмены_программы_тренировок" EntitySet="спортсмены_программы_тренировок" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Спортсмены_Разряды" Association="Self.FK_Спортсмены_Разряды">
+      <End Role="Разряды" EntitySet="Разряды" />
+      <End Role="Спортсмены" EntitySet="Спортсмены" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Спортсмены_Турниры_Спортсмены" Association="Self.FK_Спортсмены_Турниры_Спортсмены">
+      <End Role="Спортсмены" EntitySet="Спортсмены" />
+      <End Role="Спортсмены_Турниры" EntitySet="Спортсмены_Турниры" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Спортсмены_Турниры_Турниры" Association="Self.FK_Спортсмены_Турниры_Турниры">
+      <End Role="Турниры" EntitySet="Турниры" />
+      <End Role="Спортсмены_Турниры" EntitySet="Спортсмены_Турниры" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Турниры_виды_спорта1" Association="Self.FK_Турниры_виды_спорта1">
+      <End Role="виды_спорта" EntitySet="виды_спорта" />
+      <End Role="Турниры" EntitySet="Турниры" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Турниры_Города" Association="Self.FK_Турниры_Города">
+      <End Role="Города" EntitySet="Города" />
+      <End Role="Турниры" EntitySet="Турниры" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Турниры_Улицы" Association="Self.FK_Турниры_Улицы">
+      <End Role="Улицы" EntitySet="Улицы" />
+      <End Role="Турниры" EntitySet="Турниры" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

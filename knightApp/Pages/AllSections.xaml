@@ -1,0 +1,104 @@
+﻿<Page x:Class="knightApp.Pages.AllSections"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:knightApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="900"
+      Title="AllSections">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200*"></ColumnDefinition>
+            <ColumnDefinition Width="200*"></ColumnDefinition>
+            <ColumnDefinition Width="200*"></ColumnDefinition>
+            <ColumnDefinition Width="200*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0"
+              Grid.ColumnSpan="7"
+              Style="{StaticResource headerBackground}"></Grid>
+
+        <TextBlock Grid.Row="0"
+                   Grid.ColumnSpan="7"
+                   Style="{StaticResource headerText}"></TextBlock>
+
+        <Border Style="{StaticResource borderPointMenu}"
+                    Grid.Column="0"
+                    Grid.Row="1">
+            <StackPanel Orientation="Vertical"
+                        MouseDown="TextBlockSportsmen_MouseDown">
+                <TextBlock Style="{StaticResource pointMenu}"
+                       Text="Спортсмены"></TextBlock>
+                <Image Source="/Images/Sportsmen.png"
+                       Style="{StaticResource imagePointMenu}"/>
+            </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource borderPointMenu}"
+                    Grid.Column="0"
+                    Grid.Row="2">
+            <StackPanel Orientation="Vertical"
+                        MouseDown="TextBlockStaff_MouseDown">
+                <TextBlock Style="{StaticResource pointMenu}"
+                       Text="Сотрудники"></TextBlock>
+                <Image Source="/Images/employee.png"
+                       Style="{StaticResource imagePointMenu}"/>
+            </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource borderPointMenu}"
+                    Grid.Column="1"
+                    Grid.Row="1">
+            <StackPanel Orientation="Vertical"
+                        MouseDown="StackPanelPosition_MouseDown">
+                <TextBlock Style="{StaticResource pointMenu}"
+                       Text="Должности"></TextBlock>
+                <Image Source="/Images/positions.png"
+                       Style="{StaticResource imagePointMenu}"/>
+            </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource borderPointMenu}"
+                    Grid.Column="2"
+                    Grid.Row="1">
+            <StackPanel Orientation="Vertical"
+                        MouseDown="StackPanelTeams_MouseDown">
+                <TextBlock Style="{StaticResource pointMenu}"
+                       Text="Команды"></TextBlock>
+                <Image Source="/Images/teams.png"
+                        Style="{StaticResource imagePointMenu}"/>
+            </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource borderPointMenu}"
+                    Grid.Column="3"
+                    Grid.Row="1">
+            <StackPanel Orientation="Vertical"
+                        MouseDown="TextBlockTournament_MouseDown">
+                <TextBlock Style="{StaticResource pointMenu}"
+                       Text="Турниры"></TextBlock>
+                <Image Source="/Images/tournaments.png"
+                       Style="{StaticResource imagePointMenu}"/>
+            </StackPanel>
+        </Border>
+
+        <Border Style="{StaticResource borderPointMenu}"
+                    Grid.Column="1"
+                    Grid.Row="2">
+            <StackPanel Orientation="Vertical"
+                        MouseDown="StackPanelSortsOfSport_MouseDown">
+                <TextBlock Style="{StaticResource pointMenu}"
+                       Text="Виды спорта"></TextBlock>
+                <Image Source="/Images/sports.png"
+                       Style="{StaticResource imagePointMenu}"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
